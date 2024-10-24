@@ -1,0 +1,25 @@
+.section_5 .dummy_text{
+    max-width: 58%;
+    margin: 0 auto;
+    text-align: center;
+    color: #525C60;
+}
+.section_5 .customer{
+    color: #525C60;
+}
+
+.section_5 .border_1{
+    border: 1px solid #E0E0E0;
+    max-width: 70%;
+    margin: 0 auto;
+    margin-top: 100px;
+}
+.rounded-circle{
+    justify-content: center;
+    text-align: center;
+    display:flex;
+}
+.aa{
+
+    text-align: center;display: block;
+}

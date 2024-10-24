@@ -1,0 +1,34 @@
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+.Changelog_sec_1{
+    /* padding: 20px 0px; */
+}
+.Changelog_sec_1 .Changelog_bg{
+    background-image: url("../../images//Licenses.png");
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+.Changelog_sec_1 .heading{
+    padding: 60px 0px ;
+}
+.Changelog_sec_2 .box{
+    box-shadow: rgba(0, 0, 0, 0.1) 0px 10px 15px -3px, rgba(0, 0, 0, 0.05) 0px 4px 6px -2px;
+    width: 600px;
+    height: 200px;
+    border-radius: 15px;
+}
+.Changelog_sec_2 .img{
+    width: 160px;
+    height: 160px;
+}
+.Changelog_sec_2 .dummy_text{
+    color: #525C60;
+    font-weight: 400;
+    font-family: Open Sans;
+}
+.Changelog_sec_2 {
+    padding: 70px 0px;
+}

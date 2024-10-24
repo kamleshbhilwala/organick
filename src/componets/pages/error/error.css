@@ -1,0 +1,67 @@
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+.error_sec_1 {
+    padding-bottom: 100px;
+}
+
+.error_sec_1 .error_bg {
+    background-image: url("../../images/errror_banner.png");
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.error_sec_1 .page {
+    font-size: 60px;
+}
+
+.error_sec_1 .exist {
+    color: #525C60;
+    font-weight: 600;
+    font-family: Open Sans, sans-serif;
+}
+
+.error_sec_1 .main {
+    padding: 140px 0px;
+}
+.error4004{
+    width: 100%;
+}
+
+@media (max-width: 1200px) {
+    .error_sec_1 .page {
+        font-size: 50px;
+    }
+    
+    .error_sec_1 .main {
+        padding: 120px 0px;
+    }
+}
+
+@media (max-width: 768px) {
+    .error_sec_1 .page {
+        font-size: 40px;
+    }
+    
+    .error_sec_1 .main {
+        padding: 100px 20px;
+    }
+}
+
+@media (max-width: 480px) {
+    .error_sec_1 .page {
+        font-size: 30px;
+    }
+    
+    .error_sec_1 .main {
+        padding: 80px 10px;
+    }
+
+    .error_sec_1 .exist {
+        font-size: 16px;
+        text-align: center;
+    }
+}

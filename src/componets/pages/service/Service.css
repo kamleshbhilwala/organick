@@ -1,0 +1,134 @@
+*{
+    padding: 0px;
+    margin: 0px;
+    box-sizing: border-box;
+}
+
+
+.service_sec_1 .bg_img{
+    background-image: url("../../images/services-banner-bg.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
+    height: 50vh;
+    position: relative;
+}
+
+/* ************sec-2************ */
+
+.service_sec_2{
+    padding: 100px 0px;
+   
+}
+.service_sec_2 .heading{
+    color: #7EB693;
+    font-family: yellowtail;
+    font-weight: 400;
+}
+.service_sec_2 .heading2{
+    width: 30%;
+    margin: 0 auto;
+    text-align: center;
+}
+.service_sec_2 .products_main{
+    justify-content: end;
+    padding: 130px 0px;
+}
+.service_sec_2 .dummy_text{
+    color: #525C60;
+    font-weight: 400;
+    font-family: Open Sans;
+}
+
+/* *********sec-3******* */
+
+.service_sec_3{
+    padding: 50px 0px;
+}
+.service_sec_3 .img_bkg{
+    background-image: url("../../images/service_bg_2.png");
+    background-size: cover;
+    background-repeat: no-repeat;
+    height: 100vh;
+}
+
+.service_sec_3 .heading{
+    font-family: yellowtail;
+    color: #7EB693;   
+}
+.service_sec_3 .dummy_text{
+    color: #274C5B;
+    font-family: Open Sans;
+    width: 34%;
+    margin: 0 auto;
+    text-align: center;
+}
+.service_sec_3 .video_box{
+    height: 90px;
+    width: 90px;
+    background-color: #7EB693;
+    border-radius: 50%;
+    margin: 0 auto;
+}
+.service_sec_3 .icon{
+    width: 21px;
+    height: 24px;
+}
+.service_sec_3 .main{
+    padding: 22px 0px;
+}
+
+
+
+@media (max-width: 1200px) {
+    .service_sec_2 .heading2 {
+        width: 50%;
+    }
+    .service_sec_3 .main{
+        padding: 0px 0px;
+    }
+
+    .service_sec_3 .dummy_text {
+        width: 60%;
+    }
+}
+
+@media (max-width: 768px) {
+    .service_sec_1 .bg_img {
+        height: 50vh;
+    }
+
+    .service_sec_2 .heading2 {
+        width: 80%;
+    }
+    .service_sec_3 .main{
+        padding: 0px 0px;
+    }   
+
+    .service_sec_2 .products_main {
+        justify-content: center;
+        padding: 100px 0;
+    }
+
+  
+
+    .service_sec_3 .dummy_text {
+        width: 90%;
+    }
+
+}
+
+@media (max-width: 480px) {
+    .service_sec_2 {
+        padding: 50px 0;
+    }
+    .service_sec_3 .main{
+        padding: 0px 0px;
+    }
+
+    .service_sec_2 .heading2 {
+        font-size: 1.5em;
+    }
+
+
+  
+}

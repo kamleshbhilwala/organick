@@ -1,0 +1,17 @@
+.explore_btn {
+  border-radius: 13px;
+  padding: 21px 36px 23px 27px;
+  border: none; 
+}
+
+.icon {
+  margin-left: 10px;
+  width: 15px;
+  height: 15px;
+}
+
+#center {
+  margin: 0 auto;
+  display: block;
+}
+

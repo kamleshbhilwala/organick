@@ -1,0 +1,36 @@
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+.Licenses_sec_1 .Licenses_bg{
+    background-image: url("../../images/Licenses.png");
+    background-repeat: no-repeat;
+    background-size: cover;
+    height: 100%;
+}
+.Licenses_sec_1 .heading{
+    padding: 50px 0px;
+}
+
+/* ***********sec-2******* */
+
+.Licenses_sec_2{
+    padding: 100px 0px;
+}
+.Licenses_sec_2 .dummy_text{
+    width: 95%;
+    color: #525C60;
+    font-size: Open Sans;
+    font-weight: 600;
+}
+.Licenses_sec_2 .flow{
+    color: #7EB693;
+}
+
+@media (max-width: 480px) {
+
+    .Licenses_sec_2{
+        padding: 10px 0px;
+    }
+}

@@ -1,0 +1,64 @@
+.card{
+  height: 50vh;
+  width: 100%;
+  background-repeat: no-repeat;
+  border-radius: 50px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-size: cover;
+  padding: 50px;
+}
+.title_card{
+  font-weight: 400;
+  font-family: Yellowtail;
+  font-size: 36px;
+ 
+}
+.head_card{
+  font-family: roboto;
+  font-weight: 800;
+  font-size: 40px;
+}
+.section_2{
+  margin-bottom: 100px;
+}
+.oo{
+padding: 25px;
+}
+@media (max-width: 1500px) {
+.card {
+  height: 90vh;
+  padding: 20px;  
+}
+
+}
+
+@media (max-width: 1000px) {
+.card {
+ margin-bottom: 20px;
+  padding: 20px;  
+}
+.title_card {
+  font-size: 36px;
+}
+.head_card {
+  font-size: 36px;
+}
+
+}
+
+
+@media (max-width: 400px) {
+
+.section_2{
+  margin-bottom: 20px;
+}
+ .head_card {
+  font-size: 36px;
+  font-weight: 700;
+  }
+  .card{
+    padding: 40px 20px 30px;
+  }
+}

@@ -1,0 +1,183 @@
+.navbar {
+    height: 100px;
+    gap: 10px;
+    opacity: 1;
+    transition: opacity 0.3s ease;
+    display: flex; 
+    align-items: center; 
+    justify-content: space-between; 
+    padding: 0 20px; 
+}
+
+.container {
+    position: relative; /* Keep container relative for absolute positioning of icons */
+}
+
+.container .search {
+    border: none;
+    background-color: #FAFAFA;
+    border-radius: 36px;
+    height: 45px;
+    width: 100%; /* Full width on smaller screens */
+    max-width: 300px; /* Limit max width */
+    padding-left: 47px;
+}
+
+.container .icon2,
+.container .cart_icon {
+    background-color: #7EB693; /* Changed to use one color scheme */
+    height: 42px;
+    width: 42px;
+    display: flex;
+    border-radius: 50%;
+    justify-content: center;
+    align-items: center;
+    color: white;
+    font-size: 20px;
+    cursor: pointer;
+}
+
+.container .icon2 {
+    position: absolute;
+    top: 50%;
+    left: 60%;
+    transform: translateY(-50%);
+}
+
+.container .cart_icon {
+    background-color: #274C5B;
+    position: absolute;
+    right: 60%; 
+}
+
+.container .cart_main {
+    width:  160px;
+    height: 42px;
+    border: 1px solid #777777;
+    border-radius: 36px;
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    position: relative;
+}
+
+.container .cart_main:hover {
+    background-color: #7EB693;
+    transition: background-color 0.5s;
+}
+
+
+.container .cart_main:hover .cart_text {
+    color: white;
+}
+
+.container .cart_text {
+    color: #274C5B;
+    font-weight: 700;
+    font-size: 17px;
+}
+.card-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center; /* Centers the cards horizontally */
+  }
+  
+  
+  .card_main {
+    margin: auto; /* Ensures the cards are centered in their column */
+  }
+.Organick {
+    padding-left: 10px;
+}
+
+.nav-item {
+    padding-left: 20px;
+}
+
+/* Media Queries */
+@media (max-width: 768px) {
+    .navbar {
+        flex-direction: column; 
+        height: auto; /* Allow height to adjust */
+    }
+    
+    .container .search {
+        width: 70%; /* Use more width on small screens */
+        max-width: none; /* Remove max-width */
+    }
+
+    .container .icon2,
+    .container .cart_icon {
+        position: static; 
+        margin: 10px; 
+    }
+    
+    .container .cart_main {
+        width: 90%;
+        justify-content: center; 
+    }
+}
+@media (max-width: 1200px) {
+    .container .search {
+        width: 100%;
+        max-width: none; 
+    }
+    .container .icon2 {
+        position: absolute;
+        top: 50%;
+        left: 53%;
+        transform: translateY(-50%);
+    }
+    
+}
+
+.submenu {
+    display: none; /* Hidden by default */
+    position: absolute;
+    top: 100%; /* Position submenu below the parent item */
+   
+    background-color: #fff; /* Background color for the submenu */
+    padding: 10px 0;
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1); /* Drop shadow for submenu */
+    z-index: 1000; /* Ensure submenu appears above other content */
+  }
+  
+  /* Each submenu item */
+  .submenu li {
+    list-style: none;
+    text-align: center;
+  }
+  
+  /* Submenu links */
+  .submenu li a {
+    display: block;
+    padding: 10px 30px;
+    color: #333; /* Default submenu link color */
+    text-decoration: none;
+  }
+  
+  /* Hover effect for submenu links */
+  .submenu li a:hover {
+    background-color: #28a745; /* Background color on hover */
+    color: #fff; /* Text color on hover */
+  }
+  
+  /* Show submenu on hover */
+  .nav-item:hover .submenu {
+    display: block; /* Make submenu visible */
+  }
+  
+  /* Optional: add transition for smooth dropdown effect */
+  .submenu {
+    opacity: 0;
+    visibility: hidden;
+    transform: translateY(10px); /* Start slightly below its default position */
+    transition: all 0.3s ease-in-out;
+  }
+  
+  .nav-item:hover .submenu {
+    opacity: 1;
+    visibility: visible;
+    transform: translateY(0); /* Moves to normal position */
+  }
+

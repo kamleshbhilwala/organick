@@ -1,0 +1,77 @@
+/* Base styles */
+.email_1, .addres {
+    font-weight: 600;
+}
+.main_footer {
+    border-right: 1px solid #D4D4D4;
+    text-align: end;
+}
+.footer_inner {
+    margin-right: 50px;
+}
+.footer_img {
+    height: 53px;
+    width: 36px;
+}
+.dummy_text1 {
+    color: #525C60;
+    font-weight: 400;
+    font-family: 'Open Sans', sans-serif;
+    text-align: center;
+    font-size: 18px;
+}
+.insta_logo_main {
+    width: 50px;
+    height: 50px;
+    background-color: #EFF6F1;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.color_footer a {
+    color: #525C60;
+    font-weight: 400;
+    text-decoration: none;
+    
+}
+.color_footer{
+    font-size: 18px;
+}
+.left_main {
+    border-left: 1px solid #D4D4D4;
+}
+.left_inner {
+    margin-left: 40px;
+}
+
+
+@media (max-width: 768px) {
+    .footer_inner {
+        margin-right: 20px; 
+    }
+    .left_inner {
+        margin-left: 20px; 
+    }
+    .main_footer {
+        border-right: none;
+        text-align: center; 
+    }
+    .dummy_text1 {
+        font-size: 18px; 
+    }
+    .footer_img {
+        height: 40px; 
+        width: 30px; 
+    }
+    .insta_logo_main {
+        width: 40px; 
+        height: 40px; 
+    }
+    
+.left_main {
+    border:none;
+    text-align: center;
+padding-top: 20px;
+}
+}

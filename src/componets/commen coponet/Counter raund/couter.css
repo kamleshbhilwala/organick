@@ -1,0 +1,36 @@
+.section_5 .counter_main {
+    border: 1px solid green;
+    width: 150px;
+    height: 150px;
+    background-color: #F1F1F1;
+    border-radius: 50%;
+    display: flex; /* Added for centering */
+    justify-content: center;
+    align-items: center;
+}
+
+.section_5 .Orgaanic {
+    text-align: center;
+    font-weight: 600;
+}
+
+.section_5 .main_row {
+    max-width: 70%;
+    margin: 0 auto;
+    padding: 100px 0 110px; /* Shorthand for padding */
+}
+
+.section_5 .main_counter {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+}
+
+
+
+@media (max-width: 992px) {
+    .main_counter {
+        margin-bottom: 30px; /* More space between counters on larger screens */
+    }
+}
