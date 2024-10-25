@@ -1,12 +1,14 @@
 import "./Header.css";
 import Logo from "../../images/Logo.png";
-import React, { useState } from "react";
+import React, { useContext, useState } from "react";
 import { CiSearch } from "react-icons/ci";
 import { AiOutlineShoppingCart } from "react-icons/ai";
 import { Link, useNavigate, useLocation } from "react-router-dom";
 import { FaAngleDown } from "react-icons/fa";
 import { card2 } from "../Datall/Data";
-import 'bootstrap';
+import { CartContext } from "../context/CartContext";
+import CartContextValue from "../context/CartContextvalue";
+import "bootstrap";
 
 const navbar = [
   {
@@ -41,6 +43,8 @@ const navbar = [
 ];
 
 function Header() {
+  const userdata = useContext(CartContext);
+
   const navigate = useNavigate();
   const location = useLocation();
   const [activeMenuItem, setActiveMenuItem] = useState(null);
@@ -144,7 +148,8 @@ function Header() {
                   <AiOutlineShoppingCart />
                 </div>
                 <span className="cart_text">
-                  Cart ({localStorage.getItem("cart_item1") || 0})
+                  {/* Cart ({localStorage.getItem("cartItems") || 0}) */}
+                  Cart ({userdata || 0})
                 </span>
               </div>
             </form>
