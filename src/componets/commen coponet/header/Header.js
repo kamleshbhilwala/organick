@@ -148,8 +148,8 @@ function Header() {
                   <AiOutlineShoppingCart />
                 </div>
                 <span className="cart_text">
-                  {/* Cart ({localStorage.getItem("cartItems") || 0}) */}
-                  Cart ({userdata || 0})
+                  Cart ({localStorage.getItem("cartItems") || 0})
+                  {/* Cart ({userdata || 0}) */}
                 </span>
               </div>
             </form>
