@@ -100,6 +100,13 @@
         flex-direction: column; 
         height: auto; /* Allow height to adjust */
     }
+  
+    .serc{
+        display: none;
+    }
+    
+    
+    
     
     .container .search {
         width: 70%; /* Use more width on small screens */
@@ -110,6 +117,7 @@
     .container .cart_icon {
         position: static; 
         margin: 10px; 
+        display: none;
     }
     
     .container .cart_main {
@@ -131,15 +139,10 @@
     
 }
 
-.submenu {
-    display: none; /* Hidden by default */
-    position: absolute;
-    top: 100%; /* Position submenu below the parent item */
+.dropdown-menu {
    
-    background-color: #fff; /* Background color for the submenu */
-    padding: 10px 0;
-    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1); /* Drop shadow for submenu */
-    z-index: 1000; /* Ensure submenu appears above other content */
+    border: none;
+    z-index: 1000; 
   }
   
   /* Each submenu item */
@@ -149,15 +152,14 @@
   }
   
   /* Submenu links */
-  .submenu li a {
-    display: block;
+  .dropdown-menu li a {
     padding: 10px 30px;
     color: #333; /* Default submenu link color */
     text-decoration: none;
   }
   
   /* Hover effect for submenu links */
-  .submenu li a:hover {
+  .dropdown-menu li a:hover {
     background-color: #28a745; /* Background color on hover */
     color: #fff; /* Text color on hover */
   }

@@ -21,7 +21,6 @@ const navbar = [
   },
   {
     names: "Pages",
-    icon: <FaAngleDown />,
     submenu: [
       { names: "Service", url: "/service" },
       { names: "Our Team", url: "/team" },
@@ -50,7 +49,7 @@ function Header() {
   const [activeMenuItem, setActiveMenuItem] = useState(null);
   const [searchTerm, setSearchTerm] = useState("");
   const [filteredData, setFilteredData] = useState(card2);
-
+  const [activeDropdown, setActiveDropdown] = useState(null);
   const totalpage = () => {
     navigate("/total");
   };
@@ -68,94 +67,106 @@ function Header() {
   const handleMenuItemClick = (index) => {
     setActiveMenuItem(index);
   };
+  
 
   const handleSearchChange = (e) => {
     const value = e.target.value;
     setSearchTerm(value);
-
     const filtered = card2.filter((item) =>
       item.title.toLowerCase().includes(value.toLowerCase())
     );
     setFilteredData(filtered);
   };
+  const handleDropdownToggle = (index) => {
+    setActiveDropdown(activeDropdown === index ? null : index);
+  };
 
   return (
     <header>
       <nav className="navbar navbar-expand-lg bg-body-tertiary">
-        <div className="container">
-          <Link className="navbar-brand" to="/">
-            <img
-              src={Logo}
-              alt="Logo"
-              width="30"
-              height="30"
-              className="d-inline-block align-text-top"
-            />
-            <span className="Organick">Organick</span>
-          </Link>
-          <button
-            className="navbar-toggler"
-            type="button"
-            data-bs-toggle="collapse"
-            data-bs-target="#navbarSupportedContent"
-            aria-controls="navbarSupportedContent"
-            aria-expanded="false"
-            aria-label="Toggle navigation"
-          >
-            <span className="navbar-toggler-icon"></span>
-          </button>
-          <div className="collapse navbar-collapse" id="navbarSupportedContent">
-            <ul className="navbar-nav me-auto mb-2 mb-lg-0">
-              {navbar.map((item, index) => (
-                <li className="nav-item" key={index}>
-                  <Link
-                    className={`nav-link ${
-                      activeMenuItem === index ? "active" : ""
-                    }`}
-                    to={item.url}
-                    onClick={() => handleMenuItemClick(index)}
-                  >
-                    {item.names} {item.icon}
-                    {item?.submenu?.length > 0 && (
-                      <ul className="submenu p-0 text-center">
-                        {item.submenu.map((submenuItem, subIndex) => (
-                          <li key={subIndex}>
-                            <Link to={submenuItem.url} className="header_link">
-                              {submenuItem.names}
-                            </Link>
-                          </li>
-                        ))}
-                      </ul>
-                    )}
+      <div className="container">
+        <Link className="navbar-brand" to="/">
+          <img
+            src={Logo}
+            alt="Logo"
+            width="30"
+            height="30"
+            className="d-inline-block align-text-top"
+          />
+          <span className="Organick">Organick</span>
+        </Link>
+        <button
+          className="navbar-toggler"
+          type="button"
+          data-bs-toggle="collapse"
+          data-bs-target="#navbarSupportedContent"
+          aria-controls="navbarSupportedContent"
+          aria-expanded="false"
+          aria-label="Toggle navigation"
+        >
+          <span className="navbar-toggler-icon"></span>
+        </button>
+        <div className="collapse navbar-collapse" id="navbarSupportedContent">
+          <ul className="navbar-nav me-auto mb-2 mb-lg-0">
+            {navbar.map((item, index) => (
+              <li className="nav-item" key={index}>
+                {item.submenu ? (
+                  <>
+                    <a
+                      className={`nav-link dropdown-toggle ${activeDropdown === index ? "active" : ""}`}
+                      href="#"
+                      role="button"
+                      onClick={(e) => {
+                        e.preventDefault(); 
+                        handleDropdownToggle(index);
+                      }}
+                      aria-expanded={activeDropdown === index}
+                    >
+                      {item.names} {item.icon}
+                    </a>
+                    <ul className={`dropdown-menu ${activeDropdown === index ? "show" : ""}`}>
+                      {item.submenu.map((submenuItem) => (
+                        <li key={submenuItem.names}>
+                          <Link to={submenuItem.url} className="dropdown-item">
+                            {submenuItem.names}
+                          </Link>
+                        </li>
+                      ))}
+                    </ul>
+                  </>
+                ) : (
+                  <Link className={`nav-link ${location.pathname === item.url ? "active" : ""}`} to={item.url}>
+                    {item.names}
                   </Link>
-                </li>
-              ))}
-            </ul>
-            <form className="d-flex position-relative" role="search">
-              <input
-                className="form-control search me-2"
-                type="search"
-                placeholder="Search"
-                aria-label="Search"
-                value={searchTerm}
-                onChange={handleSearchChange}
-              />
-              <div className="icon2">
-                <CiSearch />
+                )}
+              </li>
+            ))}
+          </ul>
+          <form className="d-flex position-relative" role="search">
+            <input
+              className=" serc form-control search me-2"
+              type="search"
+              placeholder="Search"
+              aria-label="Search"
+              value={searchTerm}
+              onChange={handleSearchChange}
+            />
+            <div className="icon2">
+              <CiSearch />
+            </div>
+            <div className="cart_main relative" onClick={totalpage}>
+              <div className="cart_icon">
+                <AiOutlineShoppingCart />
               </div>
-              <div className="cart_main relative" onClick={totalpage}>
-                <div className="cart_icon">
-                  <AiOutlineShoppingCart />
-                </div>
-                <span className="cart_text">
-                  Cart (0)
-                  {/* Cart ({userdata || 0}) */}
-                </span>
-              </div>
-            </form>
-          </div>
+              <span className="cart_text">
+                Cart (0)
+                {/* Cart ({userdata || 0}) */}
+              </span>
+            </div>
+          </form>
         </div>
-      </nav>
+      </div>
+    </nav>
 
       {(location.pathname === "/shop" || location.pathname === "/") && (
         <div className="card-container row">
