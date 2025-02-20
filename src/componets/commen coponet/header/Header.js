@@ -24,13 +24,13 @@ const navbar = [
     submenu: [
       { names: "Service", url: "/service" },
       { names: "Our Team", url: "/team" },
-      { names: "Blog_news", url: "/blog_news" },
       { names: "Project", url: "/project" },
       { names: "Licenses", url: "/licenses" },
       { names: "Changelog", url: "/changelog" },
       { names: "Password", url: "/password" },
     ],
   },
+  { names: "Blog_news", url: "/blog_news" },
   {
     names: "Shop",
     url: "/shop",
@@ -67,7 +67,7 @@ function Header() {
   const handleMenuItemClick = (index) => {
     setActiveMenuItem(index);
   };
-  
+
 
   const handleSearchChange = (e) => {
     const value = e.target.value;
@@ -84,89 +84,89 @@ function Header() {
   return (
     <header>
       <nav className="navbar navbar-expand-lg bg-body-tertiary">
-      <div className="container">
-        <Link className="navbar-brand" to="/">
-          <img
-            src={Logo}
-            alt="Logo"
-            width="30"
-            height="30"
-            className="d-inline-block align-text-top"
-          />
-          <span className="Organick">Organick</span>
-        </Link>
-        <button
-          className="navbar-toggler"
-          type="button"
-          data-bs-toggle="collapse"
-          data-bs-target="#navbarSupportedContent"
-          aria-controls="navbarSupportedContent"
-          aria-expanded="false"
-          aria-label="Toggle navigation"
-        >
-          <span className="navbar-toggler-icon"></span>
-        </button>
-        <div className="collapse navbar-collapse" id="navbarSupportedContent">
-          <ul className="navbar-nav me-auto mb-2 mb-lg-0">
-            {navbar.map((item, index) => (
-              <li className="nav-item" key={index}>
-                {item.submenu ? (
-                  <>
-                    <a
-                      className={`nav-link dropdown-toggle ${activeDropdown === index ? "active" : ""}`}
-                      href="#"
-                      role="button"
-                      onClick={(e) => {
-                        e.preventDefault(); 
-                        handleDropdownToggle(index);
-                      }}
-                      aria-expanded={activeDropdown === index}
-                    >
-                      {item.names} {item.icon}
-                    </a>
-                    <ul className={`dropdown-menu ${activeDropdown === index ? "show" : ""}`}>
-                      {item.submenu.map((submenuItem) => (
-                        <li key={submenuItem.names}>
-                          <Link to={submenuItem.url} className="dropdown-item">
-                            {submenuItem.names}
-                          </Link>
-                        </li>
-                      ))}
-                    </ul>
-                  </>
-                ) : (
-                  <Link className={`nav-link ${location.pathname === item.url ? "active" : ""}`} to={item.url}>
-                    {item.names}
-                  </Link>
-                )}
-              </li>
-            ))}
-          </ul>
-          <form className="d-flex position-relative" role="search">
-            <input
-              className=" serc form-control search me-2"
-              type="search"
-              placeholder="Search"
-              aria-label="Search"
-              value={searchTerm}
-              onChange={handleSearchChange}
+        <div className="container">
+          <Link className="navbar-brand" to="/">
+            <img
+              src={Logo}
+              alt="Logo"
+              width="30"
+              height="30"
+              className="d-inline-block align-text-top"
             />
-            <div className="icon2">
-              <CiSearch />
-            </div>
-            <div className="cart_main relative" onClick={totalpage}>
-              <div className="cart_icon">
-                <AiOutlineShoppingCart />
+            <span className="Organick">Organick</span>
+          </Link>
+          <button
+            className="navbar-toggler"
+            type="button"
+            data-bs-toggle="collapse"
+            data-bs-target="#navbarSupportedContent"
+            aria-controls="navbarSupportedContent"
+            aria-expanded="false"
+            aria-label="Toggle navigation"
+          >
+            <span className="navbar-toggler-icon"></span>
+          </button>
+          <div className="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul className="navbar-nav me-auto mb-2 mb-lg-0">
+              {navbar.map((item, index) => (
+                <li className="nav-item" key={index}>
+                  {item.submenu ? (
+                    <>
+                      <a
+                        className={`nav-link dropdown-toggle ${activeDropdown === index ? "active" : ""}`}
+                        href="#"
+                        role="button"
+                        onClick={(e) => {
+                          e.preventDefault();
+                          handleDropdownToggle(index);
+                        }}
+                        aria-expanded={activeDropdown === index}
+                      >
+                        {item.names} {item.icon}
+                      </a>
+                      <ul className={`dropdown-menu ${activeDropdown === index ? "show" : ""}`}>
+                        {item.submenu.map((submenuItem) => (
+                          <li key={submenuItem.names}>
+                            <Link to={submenuItem.url} className="dropdown-item">
+                              {submenuItem.names}
+                            </Link>
+                          </li>
+                        ))}
+                      </ul>
+                    </>
+                  ) : (
+                    <Link className={`nav-link ${location.pathname === item.url ? "active" : ""}`} to={item.url}>
+                      {item.names}
+                    </Link>
+                  )}
+                </li>
+              ))}
+            </ul>
+            <form className="d-flex position-relative" role="search">
+              <input
+                className=" serc form-control search me-2"
+                type="search"
+                placeholder="Search"
+                aria-label="Search"
+                value={searchTerm}
+                onChange={handleSearchChange}
+              />
+              <div className="icon2">
+                <CiSearch />
               </div>
-              <span className="cart_text">
-                Cart (0)
-                {/* Cart ({userdata || 0}) */}
-              </span>
-            </div>
-          </form>
+              <div className="cart_main relative" onClick={totalpage}>
+                <div className="cart_icon">
+                  <AiOutlineShoppingCart />
+                </div>
+                <span className="cart_text">
+                  Cart (0)
+                  {/* Cart ({userdata || 0}) */}
+                </span>
+              </div>
+            </form>
+          </div>
         </div>
-      </div>
-    </nav>
+      </nav>
 
       {(location.pathname === "/shop" || location.pathname === "/") && (
         <div className="card-container row">

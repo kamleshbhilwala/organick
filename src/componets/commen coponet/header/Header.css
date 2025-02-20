@@ -21,6 +21,7 @@
     width: 100%; /* Full width on smaller screens */
     max-width: 300px; /* Limit max width */
     padding-left: 47px;
+    border: 1px solid SEAGREEN;
 }
 
 .container .icon2,
